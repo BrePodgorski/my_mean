@@ -1,0 +1,11 @@
+<h3>Add a New Question</h3>
+<!-- add the functionality for the form to pass data -->
+<form (submit)="addQuestionInNewComponent(formData)" #formData="ngForm">
+<!-- when we add this form its going to add a new friend into out component -->
+  Question: <input type="text" name="question" ngModel><br>
+  Correct Answer: <input type="text" name="rightAnswer" ngModel><br>
+  Fake Answer 1: <input type="text" name="wrongAnswer1" ngModel><br>
+  Fake Answer 2: <input type="text" name="wrongAnswer2" ngModel><br>
+  <a href="/trivia/list">Cancel</a>
+  <input type="submit" value="Submit">
+</form>

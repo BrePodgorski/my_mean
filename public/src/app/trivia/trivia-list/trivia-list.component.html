@@ -1,0 +1,16 @@
+<!-- <h3 *ngIf="user">Welcome {{user.name}}</h3> -->
+<h3 *ngIf="user">Welcome {{user.name}}</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Question</th>
+    <th>Asked At</th>
+
+  </tr>
+  <tr class="question" *ngFor="let question of questions">
+    <!-- this is how you make a for loop in an html -->
+    <th>{{question._user.name}}</th><th><a [routerLink]="['/trivia/show', question._id]">{{question.question}}</a></th><th>{{question.createdAt | date: 'mediumDate'}}</th>
+
+
+  </tr>
+</table>

@@ -1,0 +1,20 @@
+<div class="question" *ngIf="question">
+  <h3>Question: {{question.question}}</h3>
+  <h4>Which answer do you think is the right one?</h4><br>
+  <h3>Option One:</h3><p>{{question.rightAnswer}}</p><br>
+  <h3>Option Two:</h3><p>{{question.wrongAnswer1}}</p><br>
+  <h3>Option Three:</h3><p>{{question.wrongAnswer2}}</p>
+
+
+<h2>Comment below if you think you know!!</h2>
+<form (submit)="createComment(formData, question._id)" #formData ="ngForm">
+  <input type="text" name="comment" ngModel>
+  <input type="submit" value="Comment on This">
+</form>
+<div class="comment" *ngFor="let comment of question.comments" >
+    <h5> {{comment._user.name}}- {{comment.createdAt | date: 'mediumDate'}}</h5>
+    <p>{{comment.comment}}</p>
+  </div>
+  <!-- in each one of these messages we'll have another form for comments -->
+
+  </div>
